@@ -246,44 +246,4 @@
 		<finalName>${project.artifactId}</finalName>
 	</build>
 
-	<!-- 저장소 설정 - 팀 저장소로 변경해서 사용하세요 -->
-	<repositories>
-		<repository>
-			<id>daum-public</id>
-			<url>http://maven.daumcorp.com/content/groups/daum-public</url>
-			<releases>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-			<snapshots>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>daum-public</id>
-			<url>http://maven.daumcorp.com/content/groups/daum-public</url>
-			<releases>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-			<snapshots>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<!-- 배포 설정 - 팀 저장소로 변경해서 사용하세요 -->
-	<distributionManagement>
-		<repository>
-			<id>daum</id>
-			<name>Daum Repository</name>
-			<url>http://maven.daumcorp.com/content/repositories/daum</url>
-		</repository>
-
-		<snapshotRepository>
-			<id>daum-snapshots</id>
-			<name>Daum Snapshot Repository</name>
-			<url>http://maven.daumcorp.com/content/repositories/daum-snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
