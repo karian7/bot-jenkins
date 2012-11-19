@@ -1,0 +1,10 @@
+{"name":"cafe-web",
+ "url":"http://ci.daumcorp.com/job/cafe-web",
+ "build":{"number":1,
+	  "phase":"FINISHED",
+	  "status":"FAILED",
+          "url":"job/cafe-web/5",
+          "full_url":"http://ci.daumcorp.com/job/cafe-web/5",
+          "parameters":{"branch":"master"}
+	 }
+}

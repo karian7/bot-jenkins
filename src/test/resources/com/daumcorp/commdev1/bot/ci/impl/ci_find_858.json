@@ -1,0 +1,213 @@
+{
+  "actions" : [
+    {
+      "causes" : [
+        {
+          "shortDescription" : "Started by an SCM change"
+        }
+      ]
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      
+    },
+    {
+      "participants" : [
+        {
+          "absoluteUrl" : "http://ci.daumcorp.com/user/hk87",
+          "fullName" : "hk87"
+        },
+        {
+          "absoluteUrl" : "http://ci.daumcorp.com/user/karian7",
+          "fullName" : "karian7"
+        }
+      ],
+      "scorecard" : {
+        "scores" : [
+          {
+            "description" : "The build failed",
+            "ruleName" : "Build result",
+            "rulesetName" : "Build result",
+            "value" : -10.0
+          }
+        ],
+        "totalPoints" : -10.0
+      }
+    }
+  ],
+  "artifacts" : [
+    
+  ],
+  "building" : false,
+  "description" : null,
+  "duration" : 20523,
+  "estimatedDuration" : 942850,
+  "executor" : null,
+  "fullDisplayName" : "cafe-web #858",
+  "id" : "2012-10-23_19-03-15",
+  "keepLog" : false,
+  "number" : 858,
+  "result" : "FAILURE",
+  "timestamp" : 1350986595000,
+  "url" : "http://ci.daumcorp.com/job/cafe-web/858/",
+  "builtOn" : "",
+  "changeSet" : {
+    "items" : [
+      {
+        "affectedPaths" : [
+          "src/main/java/daum/cafe/service/svcbbs/action/InternalListShortCommentAction.java",
+          "src/main/java/daum/cafe/service/svcbbs/action/InternalReadArticleAction.java",
+          "src/main/java/daum/cafe/service/svcbbs/action/ReadAction.java",
+          "src/main/java/daum/cafe/service/svcbbs/dao/TinfoarticleHandler.java",
+          "src/main/java/daum/cafe/service/svcbbs/entity/TinformationArticle.java",
+          "src/main/java/daum/cafe/service/svcbbs/manager/InformationArticleHelper.java",
+          "src/main/java/daum/cafe/service/svcbbs/servlet/MapPostServlet.java",
+          "src/main/java/daum/cafe/service/svcbbs/servlet/ReadServlet.java",
+          "src/main/java/daum/cafe/service/svccafesearch/manager/ReadAuthCheck.java",
+          "src/main/webapp/template/userview_cube/bbs/bbs_search_read.html"
+        ],
+        "author" : {
+          "absoluteUrl" : "http://ci.daumcorp.com/user/karian7",
+          "fullName" : "karian7"
+        },
+        "commitId" : "3509",
+        "msg" : "검색읽기로직 리펙토링.\n모바일 다음앱에서 검색펌링크로 유입시 무한 리다이렉트 버그수정.",
+        "timestamp" : 1350986337744,
+        "date" : "2012-10-23T09:58:57.744809Z",
+        "msg" : "검색읽기로직 리펙토링.\n모바일 다음앱에서 검색펌링크로 유입시 무한 리다이렉트 버그수정.",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/action/InternalListShortCommentAction.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/action/InternalReadArticleAction.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/action/ReadAction.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/dao/TinfoarticleHandler.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/entity/TinformationArticle.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/manager/InformationArticleHelper.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/servlet/MapPostServlet.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/servlet/ReadServlet.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svccafesearch/manager/ReadAuthCheck.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/webapp/template/userview_cube/bbs/bbs_search_read.html"
+          }
+        ],
+        "revision" : 3509,
+        "user" : "karian7"
+      },
+      {
+        "affectedPaths" : [
+          "/cafe-web/branches/BR_cafe-web_mobileFounder2/src/main/java/daum/cafe/service/svcbbs/dao/TQnaDataHandler.java",
+          "src/main/java/daum/cafe/service/svcbbs/action/InternalUpdateArticleAction.java",
+          "src/main/java/daum/cafe/service/svcbbs/action/ReadAction.java",
+          "src/main/java/daum/cafe/service/svcbbs/form/BoardReadForm.java",
+          "src/main/java/daum/cafe/service/svcbbs/manager/CafeQAManager.java"
+        ],
+        "author" : {
+          "absoluteUrl" : "http://ci.daumcorp.com/user/hk87",
+          "fullName" : "hk87"
+        },
+        "commitId" : "3508",
+        "msg" : "CTI-1382: QA answerid로 해당하는 답변 글 정보만 가져오는 로직 및 쿼리 추가\nhttp://issue.daumcorp.com/browse/CTI-1382",
+        "timestamp" : 1350986138827,
+        "date" : "2012-10-23T09:55:38.827949Z",
+        "msg" : "CTI-1382: QA answerid로 해당하는 답변 글 정보만 가져오는 로직 및 쿼리 추가\nhttp://issue.daumcorp.com/browse/CTI-1382",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/branches/BR_cafe-web_mobileFounder2/src/main/java/daum/cafe/service/svcbbs/dao/TQnaDataHandler.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/action/InternalUpdateArticleAction.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/action/ReadAction.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/form/BoardReadForm.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "/cafe-web/trunk/src/main/java/daum/cafe/service/svcbbs/manager/CafeQAManager.java"
+          }
+        ],
+        "revision" : 3508,
+        "user" : "hk87"
+      }
+    ],
+    "kind" : "svn",
+    "revisions" : [
+      {
+        "module" : "http://source.daumcorp.com/private/daum-cafe/cafe-web/trunk",
+        "revision" : 3509
+      },
+      {
+        "module" : "http://source.daumcorp.com/private/daum-cafe/cafe-tools/trunk",
+        "revision" : 1725
+      }
+    ]
+  },
+  "culprits" : [
+    {
+      "absoluteUrl" : "http://ci.daumcorp.com/user/cozy115",
+      "fullName" : "cozy115"
+    },
+    {
+      "absoluteUrl" : "http://ci.daumcorp.com/user/headzero",
+      "fullName" : "headzero"
+    },
+    {
+      "absoluteUrl" : "http://ci.daumcorp.com/user/hk87",
+      "fullName" : "hk87"
+    },
+    {
+      "absoluteUrl" : "http://ci.daumcorp.com/user/karian7",
+      "fullName" : "karian7"
+    },
+    {
+      "absoluteUrl" : "http://ci.daumcorp.com/user/ryunny",
+      "fullName" : "ryunny"
+    }
+  ],
+  "mavenArtifacts" : null,
+  "mavenVersionUsed" : "3.0.3"
+}

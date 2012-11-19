@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+	<form id="bot_test_form">
+		<fieldset>
+			<label>타입:<select name="action">
+				<option value="sendFromGroup">메시지전송</option>
+				<option value="createGroup">그룹생성</option>
+			</select></label> <br />
+			<label>그룹아이디: <input name="groupId" value="GID18186517" /></label> (카페 현재 groupId: GID17116712 )<br /> 
+			<label>CI Job 아이디: <input id="ciJobId" value="" /></label>  <br />
+			<label>봇커맨드: <select id="botCommand">
+				<option value="CI봇 알려줘">CI봇 알려줘</option>
+				<option value="CI봇 듣기싫어">CI봇 듣기싫어</option>
+				<option value="CI봇 이제그만">CI봇 이제그만</option>
+			</select></label>  <br />
+			<label>메시지: <input id="content" name="content" value="" style="width: 300px;"  readonly="readonly"/></label>
+			
+		</fieldset>
+	</form>
+	<div>
+		<a id="send" href="#">send</a>
+	</div>
+	<script type="text/javascript">
+	$(function() {
+		$('#ciJobId').keyup(function() {
+			$('#content').val($('#botCommand').val() + ' ' + $('#ciJobId').val());
+		});
+		$('#botCommand').change(function() {
+			$('#content').val($('#botCommand').val() + ' ' + $('#ciJobId').val());
+		});
+		
+		$('#content').val($('#botCommand').val() + ' ' + $('#ciJobId').val());
+	});
+	$('#send').click(function() {
+		console.debug($('#send').val());
+		jQuery.ajax({
+			type : "POST",
+			url : "/bot/ci",
+			data : $('#bot_test_form').serialize()
+		});
+	});
+	</script>
+</body>
+</html>

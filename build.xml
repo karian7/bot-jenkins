@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<project name="cafe-bot-ci" default="deploy" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<property file="build.properties" />
+	<path id="maven-ant-tasks.classpath" path="${maven.ant.task}" />
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant"
+		classpathref="maven-ant-tasks.classpath" />
+	<artifact:pom id="pom" file="pom.xml" />
+	<artifact:dependencies filesetId="pom.fileset" pathId="pom.classpath" pomRefId="pom" />
+
+	<condition property="rsync.bin" value="${rsync.exe}">
+		<os family="windows" />
+	</condition>
+	<property name="rsync.bin" value="rsync" />
+
+	<macrodef name="deploy">
+		<attribute name="to" />
+		<attribute name="src" />
+		<attribute name="desc" />
+		<sequential>
+			<echo message="=========== deploy @{desc} ===========" />
+			<exec executable="${rsync.bin}">
+				<arg line="-av --port=${rsync.port} --exclude=.svn --delete @{src} @{desc}::@{to}" />
+			</exec>
+		</sequential>
+	</macrodef>
+
+	<target name="clean">
+		<artifact:mvn pom="pom.xml" mavenhome="${maven.home}" fork="true" maxmemory="1024M">
+			<arg value="clean" />
+		</artifact:mvn>
+	</target>
+
+	<target name="compile">
+		<artifact:mvn pom="pom.xml" mavenhome="${maven.home}" fork="true" maxmemory="1024M">
+			<arg value="compile" />
+		</artifact:mvn>
+	</target>
+
+	<target name="build">
+		<artifact:mvn pom="pom.xml" mavenhome="${maven.home}" fork="true" maxmemory="1024M">
+			<arg line="clean resources:resources verify war:exploded" />
+		</artifact:mvn>
+	</target>
+
+	<target name="deploy" depends="build">
+		<deploy to="${remote.server.path}" src="${src.webapp}" desc="${remote.server}" />
+	</target>
+
+</project>

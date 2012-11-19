@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+	<textarea id="json" rows="10" cols="50">{"name":"cafe-node-mapinfo",
+ "url":"http://ci.daumcorp.com/job/cafe-node-mapinfo",
+ "build":{"number":1,
+	  "phase":"FINISHED",
+	  "status":"FAILED",
+          "url":"job/cafe-node-mapinfo/15",
+          "full_url":"http://ci.daumcorp.com/job/cafe-node-mapinfo/15",
+          "parameters":{"branch":"master"}
+	 }
+}</textarea>
+	<div>
+		<a id="send" href="#">send</a>
+	</div>
+	<script type="text/javascript">
+		$('#send').click(function() {
+			console.debug($('#send').val());
+			jQuery.ajax({
+				type: "POST",
+				url: "/bot/ci/noti",
+				dataType: 'json',
+				data: $('#json').val()
+			});
+		});
+	</script>
+</body>
+</html>
