@@ -242,8 +242,38 @@
 					</connectors>
 				</configuration>
 			</plugin>
+			<!-- To use the plugin goals in your POM or parent POM -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.7.1</version>
+			</plugin>
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
+
+		<!-- To define the plugin version in your parent POM -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pmd-plugin</artifactId>
+					<version>2.7.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 	</build>
 
+
+	<!-- To use the report goals in your POM or parent POM -->
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.7.1</version>
+			</plugin>
+			...
+		</plugins>
+	</reporting>
 </project>
